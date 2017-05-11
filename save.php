@@ -28,7 +28,7 @@ if (isset($_POST['url']) && ($_POST['url'] != null)) {
 		{
 			foreach (unserialize($mass[$x]) as $sh=>$u)
 			{
-				if ($_POST['sh_url'] == $sh)
+				if ($_POST['sh_url'] === $sh)
 				{
 					//если есть в списке - выведем сообщение об ошибке и завершаем скрипт
 					die("Ошибка! Сокращение уже есть."); 
