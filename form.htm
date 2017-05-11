@@ -1,0 +1,31 @@
+<html lang="ru">
+	<head>
+		<script type="text/javascript" src="http://www.net-f.ru/jss/jquery.min.js"></script> 
+	</head>
+	<body>
+		<form action="javascript:void(0);"  id="form" method="post">
+			<p>Введите свой адрес <input type="text" name="url"></p>
+			<p>Введите короткий адрес <input type="text" name="sh_url"></p>
+			<input type="submit" onclick="send();" value="Сократить">
+		</form>
+		<span id="short"></span>
+		<script language="JavaScript" type="text/javascript">
+			function send()
+			{
+				$("#short").html();
+				var msg=$('#form').serialize();
+				$.ajax(
+					{
+					type:'POST',
+					url:"http://short.tw1.ru/save.php",
+					data:msg,
+					cache:false,
+					success:function(data)
+					{
+						$("#short").html(data);
+					}
+				});
+			}
+		</script>
+	</body>
+</html>
