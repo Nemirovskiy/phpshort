@@ -83,6 +83,6 @@ if (isset($_POST['url']) && ($_POST['url'] != null)) {
 		fwrite ($file, serialize($str).PHP_EOL);
 		fclose ($file);
 		//выведем на экран ссылку
-		echo "<a href='http://".$_SERVER['SERVER_NAME']."?".$sh_url."'>".$_SERVER['SERVER_NAME']."?".$sh_url."</a>";
+		echo "<a href='http://".$_SERVER['SERVER_NAME']."?".$sh_url."'>".$_SERVER['SERVER_NAME']."/?".$sh_url."</a>";
 }
 ?>
